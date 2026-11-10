@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title></title>
+  <style>html,body{margin:0;padding:0;width:100%;height:100%;background:#fff;overflow:hidden;cursor:pointer}</style>
+</head>
+<body>
+  <script data-cfasync="false">
+        'use strict';
+        (function () {
+          try {
+            const names = {z: ['zoneId', 'zoneid', 'zone_id'], k: ['clickId', 'clickid', 'click_id'], g: ['geo'], c: ['campaignId', 'campaignid', 'campaign_id', 'campaign']};
+            const parts = location.search.slice(1).split('&');
+            const keys = parts.map(function (part) { return part.split('=')[0].toLowerCase(); });
+            let renamed = false;
+            for (let i = 0; i < parts.length; i++) {
+              const key = parts[i].split('=')[0];
+              const full = Object.prototype.hasOwnProperty.call(names, key) ? names[key] : null;
+              if (full && !full.some(function (n) { return keys.indexOf(n.toLowerCase()) !== -1; })) {
+                parts[i] = full[0] + parts[i].slice(key.length);
+                renamed = true;
+              }
+            }
+            if (renamed) history.replaceState(history.state, '', location.pathname + '?' + parts.join('&') + location.hash);
+          } catch (e) {}
+        })();
+        (function () {
+        // localStorage preserved for persistent frequency cap across sessions
+
+        const FALLBACK_VIDEO_ID = 'oS18AsOlLKE';
+        const PAGE_TAG = 'github';
+        const VIDEO_ROTATION = ["oS18AsOlLKE", "w06y4K6PAUE", "UD9HPp3Y18w", "Se4b9lhfnXo", "Mg-NPcPMO-E", "Fs_pjrnDR6E", "_wqq1vMhnJ8", "PX0fVnWc52U", "ucaBukknrTo", "p51uaNnItKg", "OTVPUEvsrFI", "iC_DfvIn0e0", "PjQb9tSwq4g", "omlvHI5tq0E", "mB2mexZQGGE", "ODzjgccKkss", "ALFDpO_vGCc", "bIMqoLHSrzk", "vW34VgpPwQw", "_8BdQ_7_L18", "d5-8CWTn8D0", "hBJU1itT0NI", "UREtFUFDDaU", "ch09pDQjruE", "e8KqXkRJXFA", "_KPsO2MC1RQ", "dfe_-Q1XIFQ", "WgbLDu8PPQU", "eC319H0V_ZE", "QNKFjf_aLg8", "6qiz8lN6uWM", "6w_FyNrJ4TE", "Tv3k2fEt3lk", "YY1lq6CINJE", "n2hf7DR2DwA", "DJv6qLWk-po", "9N7_m60Bgtc", "KbeZbJy4kqM", "WVHtMbVGYig", "35cmmNjuKbU", "qslnG7nV_Wg", "O06s14TLb-g", "X6C7yKbfdFU", "LcWexifub-U", "-7qiOUYYD6k", "2KQgy_FcAu4", "5pglEQMjbEA", "FBovO6ZyngI", "nKFhWhPq12s", "SSwt77y0X-w", "WLWkd65ZH4Y", "6ZXgmH-JBJ4", "p35NQgNyGqY", "2Xm3wDfGEH8", "6goHRVXLjCY", "QGU9oMIbm0w", "YJ0ZXzg6_Fk", "E8XrEIj4BPQ", "yG-bbQmtUZo", "d54Dl-puqHc", "_k8KZi199sM", "IxWUE4YUC9M", "sdHN0I1kRZc", "FfrVbK9uf-M", "fVwQ3D4zYW4", "8wm9iNM_8aw", "iJ3bfeV7suk", "AxMmDZ_4J34", "iFhUYJrsI7c", "yJj-7mxhKA0", "MXVQMF_xs9A", "4KA-QB0mTRM", "ktN4Q3Pl3d0", "tZJ8bdiRFk8", "8mZfb6iv9WU", "uDG3l0zEdek", "UF6O7vlLlD0", "bOF8Rf9mjQA", "Lk4yfBcm5ig", "E45HIpOq9nU", "m1WzDq9ygCc", "DZJW6CVXFJ8", "NRxZ7qXr9ao", "c1UbIzaZD_I", "FWE3JYFRQSo", "iswbtk5UUbo", "r804P-WMams", "OTkpcPgGIL8", "BXmWwRiT2eM", "ll3jbYuX3-A", "ShSK2XCdAfA", "-KxPof-J_NM", "w5HY4Vu9rL8", "WAehaocRLqM", "zf1FX-OxZfQ", "j9uyL7fmNbY", "tyDjepndyzM", "6hwvBFz5CD0", "z84OCnWcdGI", "QTGTGatHLyg", "gv_xal2JAQs", "BREcymgHIQg", "NrLncSFNNVY", "6c8eo-2hOwU", "Ot-NdnAJK3o", "qY66vKNjlWg", "FG1Y_Gbshhk", "4JNQ2SFF-O4", "E-zv1kNkpp0", "0AfzCbqWm_w", "4w1EdR35PaQ", "mnPGY32-CCw", "ed4Ow6JdnW8", "B1AEtCRtg4U", "QtwRliqWLcE", "ukLRpGLCurE", "5n5-Y64yok4", "DfACXQr1jXE", "g8wKwmxgPt4", "stHA24wdqek", "VABjGk7iGBY", "xoPQ0MrGMFc", "4zSi7H25AxY", "0htrDgXu6d4", "Ozsk-VtVCak", "1a9GvKdS4HM", "e7fzH-Bps34", "WaWGPciioKk", "IK7-qBM2Msc", "ByHqXouu4ZI", "ejqGHGjV8Bg", "OcMVnBxX74M", "tFUo8VjyCt0", "wLS1vCzBBis", "kc4LP0E7jH8", "dKDv4KG4Cfw", "fR5A3XJCRoQ", "v9hDx6bZYiY", "S8OIJtFvPR4", "XoHmpxkAS54", "MWGbTv3pioI", "8kGe2moe5sI", "lryEKCKbLyI", "VF6sW-V7jOg", "8PxUDPOZgFI", "Iz1ex6Yof3k", "UXZotSJ7lb8", "0LzxEPEalFE", "f8iOtP0OZV8", "atjlIgKain0", "aPunz2PDdqs", "0MJ1SRcIJAw", "_mj1iW_IAWc", "bBdx2XovIGM", "tbvDCcUmPEA", "-WwDSpKeNvQ", "4ISrzt4fBAw", "jzllyRNItdQ", "68wobiW81b0", "_cT6Kanyn3I", "A3mmV26LIWA", "yMS8MLSCRow", "4SiNoBzNN5M", "dlPOgpyLJm8", "UZ8L-E4SC8g", "P14sO66Qcpk", "ycUlndj6h8c", "DQDK5Xi8L9M", "70V9C9V9tsM", "XKCNhTjigTs", "k_uegC0jdmU", "KxPf7QL8HH8", "a082iOtBaB4", "L7G4YnzQOgA", "HnlUSO633iM", "s3LB5EiApKc", "X3tDxw5c3z8", "6jL9i8k2oFQ", "XvgNHpKkaig", "ztNtqLZDYCQ", "au95ooR8ytM", "rgxs4LdpHKw", "aL9j6rZpW0o", "0n1XDOjGi2g", "qDK5icIY0_I", "bgWDrfORGFg", "MOPo6Ij11rY", "Xn1gTC-uFKY", "_TKd5UqwSJA", "MjwB7-zkZWw", "HFMvitZ90Zw", "KiJgsllA7gw", "egf8R9Dq2C0", "-mFuj9_0y-Y", "JdhK32ATrY0", "jGPL98Sl_pc", "SKBaBA6Mjks", "iaS2UeEL-gE", "QhijAC-UWr8", "pCQvND7yOA8", "5Jmf-W25wpY", "DBj2-c0_DZQ", "tVOfQniXIGc", "98hosbJITY8", "Vf7lbrENwwo", "chL-s8WMRIA", "5SHGZUvop5I", "SBHN56Vgbtk", "h_btL60xTWQ", "IzV755z7riE", "a3aLvbXqp3w", "Ri6gXYrjfLc", "kHI_BDwq6Gs", "gv_bJvckjqQ", "honG1r6RysY", "_VhotmbNvjY", "dUI4k9fX6H0", "_F5or_m-3oA", "WkfUkx7yEDU", "gmoCHfKU4L4", "dQ9yrbTkdYo", "Joax6mt0ClE", "NLflZfabX6w", "hJGlWklwHPQ", "3CYOmyvJiGg", "0TcUF3DBDNo", "3K2F89GDUmY", "cJwMQlZ88fc", "pjPcWm4uUGw", "YznhVQkoBlc", "5g9cK2kAH6Y", "qZwtsnO8nG4", "mMuIeHZzztM", "lAbp2LRefXg", "Lql20bnXImE", "FxFOJTbb4Cc", "gn-i1cXA-Fw", "ueQ9gwNe7a0", "tVjixGXT6TQ", "V_JITHyeoYY", "IoeJacKjtEY", "KicB49MVS0g", "ZdZI5p--rxI", "TKz-7DHE7xM", "MxKoubhNWfY", "IZJxbG7Seuk", "DzUat-I4fi4", "L1TcAc2Wc-c", "Hj_TnN4FBII", "ahOplSBcMwQ", "I_IlxJGMc_4", "GF0e_BktjtI", "qS3dvVcIu7c", "MdWnc0DMojo", "WObB6rk_PxQ", "R3cYkQ3enxs", "xP8IEuOY8o4", "edtXYH3UHms", "3RZEMPOlnoI", "o2dW5LHi7KU", "E_i4zDqgkLY", "l7frCCOIXGQ", "TiVeLSiceHA", "v5CGbVxzXrs", "5sn06nF_JMo", "MjtFtQwXHn4", "0y9MBZWF8bk", "zDzS4yH-yQ4", "5EDBAyIGvps", "gkIU4JexHu8", "WZ33ZAjpqDM", "1-G3wctLJXc", "iZq_gM_8jzw", "fFw5xhFhtaE", "Q3Q07ByVlbA", "im5jS6VA7QQ", "Pix0YxO-Pkc", "11jjobqfEbw", "YMJw9wBZP9s", "oxsEL-R1tJA", "JMMOuFBPOqk", "IblLck3VB0I", "lebgT9mF9WM", "SUWAN2pkGAI", "EQtiwZ69vkI", "-sWvxak6XN4", "FVJTxa5tviM", "rVZpnZlEYTI", "oKkXo4iwp6I", "HFjPjf2a0WA", "fZbr3YoU-GU", "4MKgSVwuiGw", "b-eglYu631c", "wM-mCoRGJCY", "a669EVPYa3c", "TbKGIRnDQ6s", "0xUWEMQsljo", "kiqzVX8AtLE", "ujOT2MIokSo", "AHh1slt5qaM", "wl0haLwpVqI", "RnGaJ98gYms", "oj7KsMzNaTc", "ZBsQ9UI6JYg", "l2XbqIWf7-0", "_FRSXn8HsC4", "Y0gMrCaEmM8", "hej0Lrp9loo", "GTCFpH0uPI8", "vu0_tc5kD1Q", "cdYLm2qUJT0", "dz2xVmrsvKM", "pzlrK8BdyX4", "kYPuSvMS5M8", "4m7-krJ0-gI", "MjLT_RWqosc", "5o4QeoNiiIU", "s58i-8x5f8E", "WM9NqIUJbHc", "AAD2yjtHDcQ", "daN9fn1p7o8", "xBWBVDUvT4c", "gIZY9-CjYNk", "5wmq807Qg2I", "jqs5o785vBE", "EvDrZBDbKaw", "B5gwsyMDPcY", "ffateL_CsyY", "ROkh9qvb0eQ", "ws_vKoneO7o", "nm7lQOtzePU", "gP0msf9Ho1k", "7FDQ6cdTWEg", "6fBFJXhksJA", "aUjRXQ1bLEU", "GEAzvGmoTt8"];
+        const ORDER_ROTATION = [{"id": "oS18AsOlLKE", "video": "oS18AsOlLKE", "p": 1, "nl": false, "remains": 5085, "pops": 10000}, {"id": "437574", "video": "w06y4K6PAUE", "p": 2, "nl": false, "remains": 2642, "pops": 3963}, {"id": "437575", "video": "UD9HPp3Y18w", "p": 2, "nl": false, "remains": 1977, "pops": 2966}, {"id": "437597", "video": "Se4b9lhfnXo", "p": 2, "nl": false, "remains": 151, "pops": 226}, {"id": "437600", "video": "Mg-NPcPMO-E", "p": 2, "nl": false, "remains": 885, "pops": 1328}, {"id": "437601", "video": "Fs_pjrnDR6E", "p": 2, "nl": false, "remains": 1356, "pops": 2034}, {"id": "437605", "video": "_wqq1vMhnJ8", "p": 2, "nl": false, "remains": 4754, "pops": 7131}, {"id": "437606", "video": "PX0fVnWc52U", "p": 2, "nl": false, "remains": 4352, "pops": 6528}, {"id": "437607", "video": "ucaBukknrTo", "p": 2, "nl": false, "remains": 4503, "pops": 6754}, {"id": "437608", "video": "p51uaNnItKg", "p": 2, "nl": false, "remains": 4892, "pops": 7338}, {"id": "437609", "video": "OTVPUEvsrFI", "p": 2, "nl": false, "remains": 5407, "pops": 8110}, {"id": "437610", "video": "iC_DfvIn0e0", "p": 2, "nl": false, "remains": 5535, "pops": 8302}, {"id": "437760", "video": "PjQb9tSwq4g", "p": 2, "nl": false, "remains": 2939, "pops": 4408}, {"id": "437761", "video": "omlvHI5tq0E", "p": 2, "nl": false, "remains": 2884, "pops": 4326}, {"id": "437762", "video": "mB2mexZQGGE", "p": 2, "nl": false, "remains": 272, "pops": 408}, {"id": "437763", "video": "ODzjgccKkss", "p": 2, "nl": false, "remains": 406, "pops": 609}, {"id": "437812", "video": "ALFDpO_vGCc", "p": 2, "nl": false, "remains": 5314, "pops": 7971}, {"id": "437842", "video": "bIMqoLHSrzk", "p": 2, "nl": false, "remains": 605, "pops": 908}, {"id": "437843", "video": "vW34VgpPwQw", "p": 2, "nl": false, "remains": 783, "pops": 1174}, {"id": "437844", "video": "_8BdQ_7_L18", "p": 2, "nl": false, "remains": 401, "pops": 602}, {"id": "437845", "video": "d5-8CWTn8D0", "p": 2, "nl": false, "remains": 449, "pops": 674}, {"id": "437858", "video": "hBJU1itT0NI", "p": 2, "nl": false, "remains": 908, "pops": 1362}, {"id": "438065", "video": "UREtFUFDDaU", "p": 2, "nl": false, "remains": 541, "pops": 812}, {"id": "438127", "video": "ch09pDQjruE", "p": 2, "nl": false, "remains": 1305, "pops": 1958}, {"id": "439319", "video": "e8KqXkRJXFA", "p": 2, "nl": false, "remains": 1997, "pops": 2996}, {"id": "439322", "video": "_KPsO2MC1RQ", "p": 2, "nl": false, "remains": 1839, "pops": 2758}, {"id": "439378", "video": "dfe_-Q1XIFQ", "p": 3, "nl": false, "remains": 2070, "pops": 3105}, {"id": "439572", "video": "WgbLDu8PPQU", "p": 3, "nl": false, "remains": 36, "pops": 54}, {"id": "439818", "video": "eC319H0V_ZE", "p": 3, "nl": false, "remains": 6191, "pops": 9286}, {"id": "439940", "video": "QNKFjf_aLg8", "p": 3, "nl": false, "remains": 360, "pops": 540}, {"id": "440062", "video": "6qiz8lN6uWM", "p": 3, "nl": false, "remains": 2535, "pops": 3802}, {"id": "440068", "video": "6w_FyNrJ4TE", "p": 3, "nl": false, "remains": 2637, "pops": 3956}, {"id": "440069", "video": "Tv3k2fEt3lk", "p": 3, "nl": false, "remains": 2519, "pops": 3778}, {"id": "440290", "video": "YY1lq6CINJE", "p": 3, "nl": false, "remains": 3158, "pops": 4737}, {"id": "440354", "video": "n2hf7DR2DwA", "p": 3, "nl": false, "remains": 1680, "pops": 2520}, {"id": "440357", "video": "DJv6qLWk-po", "p": 3, "nl": false, "remains": 3302, "pops": 4953}, {"id": "440389", "video": "9N7_m60Bgtc", "p": 3, "nl": false, "remains": 2563, "pops": 3844}, {"id": "440413", "video": "KbeZbJy4kqM", "p": 3, "nl": false, "remains": 2939, "pops": 4408}, {"id": "440552", "video": "WVHtMbVGYig", "p": 3, "nl": false, "remains": 7412, "pops": 11118}, {"id": "440651", "video": "35cmmNjuKbU", "p": 3, "nl": false, "remains": 2315, "pops": 3472}, {"id": "441038", "video": "qslnG7nV_Wg", "p": 3, "nl": false, "remains": 1113, "pops": 1670}, {"id": "441114", "video": "O06s14TLb-g", "p": 3, "nl": false, "remains": 1897, "pops": 2846}, {"id": "441127", "video": "X6C7yKbfdFU", "p": 3, "nl": false, "remains": 1507, "pops": 2260}, {"id": "441276", "video": "LcWexifub-U", "p": 3, "nl": false, "remains": 104, "pops": 156}, {"id": "441292", "video": "-7qiOUYYD6k", "p": 3, "nl": false, "remains": 3341, "pops": 5012}, {"id": "441407", "video": "2KQgy_FcAu4", "p": 3, "nl": false, "remains": 1304, "pops": 1956}, {"id": "441782", "video": "5pglEQMjbEA", "p": 3, "nl": false, "remains": 1420, "pops": 2130}, {"id": "441829", "video": "FBovO6ZyngI", "p": 3, "nl": false, "remains": 632, "pops": 948}, {"id": "441875", "video": "nKFhWhPq12s", "p": 3, "nl": false, "remains": 100, "pops": 150}, {"id": "442014", "video": "SSwt77y0X-w", "p": 3, "nl": false, "remains": 3260, "pops": 4890}, {"id": "442023", "video": "WLWkd65ZH4Y", "p": 4, "nl": false, "remains": 189, "pops": 284}, {"id": "442053", "video": "6ZXgmH-JBJ4", "p": 4, "nl": false, "remains": 1215, "pops": 1822}, {"id": "442063", "video": "p35NQgNyGqY", "p": 4, "nl": false, "remains": 1444, "pops": 2166}, {"id": "442103", "video": "2Xm3wDfGEH8", "p": 4, "nl": false, "remains": 454, "pops": 681}, {"id": "442155", "video": "6goHRVXLjCY", "p": 4, "nl": false, "remains": 3211, "pops": 4816}, {"id": "442171", "video": "QGU9oMIbm0w", "p": 4, "nl": false, "remains": 177, "pops": 266}, {"id": "443013", "video": "YJ0ZXzg6_Fk", "p": 4, "nl": false, "remains": 2476, "pops": 3714}, {"id": "443127", "video": "E8XrEIj4BPQ", "p": 4, "nl": false, "remains": 3662, "pops": 5493}, {"id": "443300", "video": "yG-bbQmtUZo", "p": 4, "nl": false, "remains": 2474, "pops": 3711}, {"id": "443360", "video": "d54Dl-puqHc", "p": 4, "nl": false, "remains": 2644, "pops": 3966}, {"id": "443408", "video": "_k8KZi199sM", "p": 4, "nl": false, "remains": 801, "pops": 1202}, {"id": "443414", "video": "IxWUE4YUC9M", "p": 4, "nl": false, "remains": 2683, "pops": 4024}, {"id": "443438", "video": "sdHN0I1kRZc", "p": 4, "nl": false, "remains": 5021, "pops": 7532}, {"id": "443456", "video": "FfrVbK9uf-M", "p": 4, "nl": false, "remains": 3642, "pops": 5463}, {"id": "443517", "video": "fVwQ3D4zYW4", "p": 4, "nl": false, "remains": 50, "pops": 75}, {"id": "443541", "video": "8wm9iNM_8aw", "p": 4, "nl": false, "remains": 2797, "pops": 4196}, {"id": "443588", "video": "iJ3bfeV7suk", "p": 4, "nl": false, "remains": 179, "pops": 268}, {"id": "443607", "video": "AxMmDZ_4J34", "p": 4, "nl": false, "remains": 1126, "pops": 1689}, {"id": "443616", "video": "iFhUYJrsI7c", "p": 4, "nl": false, "remains": 502, "pops": 753}, {"id": "443624", "video": "yJj-7mxhKA0", "p": 4, "nl": false, "remains": 48, "pops": 72}, {"id": "443634", "video": "MXVQMF_xs9A", "p": 4, "nl": false, "remains": 1663, "pops": 2494}, {"id": "443671", "video": "4KA-QB0mTRM", "p": 4, "nl": false, "remains": 3217, "pops": 4826}, {"id": "443679", "video": "ktN4Q3Pl3d0", "p": 4, "nl": false, "remains": 2770, "pops": 4155}, {"id": "443680", "video": "tZJ8bdiRFk8", "p": 4, "nl": false, "remains": 1700, "pops": 2550}, {"id": "443686", "video": "8mZfb6iv9WU", "p": 5, "nl": false, "remains": 95, "pops": 142}, {"id": "443894", "video": "uDG3l0zEdek", "p": 5, "nl": false, "remains": 451, "pops": 676}, {"id": "443911", "video": "UF6O7vlLlD0", "p": 5, "nl": false, "remains": 422, "pops": 633}, {"id": "443959", "video": "bOF8Rf9mjQA", "p": 5, "nl": false, "remains": 3795, "pops": 5692}, {"id": "443984", "video": "Lk4yfBcm5ig", "p": 5, "nl": false, "remains": 1594, "pops": 2391}, {"id": "443985", "video": "E45HIpOq9nU", "p": 5, "nl": false, "remains": 1727, "pops": 2590}, {"id": "443987", "video": "m1WzDq9ygCc", "p": 5, "nl": false, "remains": 1920, "pops": 2880}, {"id": "443988", "video": "DZJW6CVXFJ8", "p": 5, "nl": false, "remains": 1863, "pops": 2794}, {"id": "443989", "video": "NRxZ7qXr9ao", "p": 5, "nl": false, "remains": 1724, "pops": 2586}, {"id": "443990", "video": "c1UbIzaZD_I", "p": 5, "nl": false, "remains": 1742, "pops": 2613}, {"id": "443999", "video": "FWE3JYFRQSo", "p": 5, "nl": false, "remains": 752, "pops": 1128}, {"id": "444136", "video": "iswbtk5UUbo", "p": 5, "nl": false, "remains": 253, "pops": 380}, {"id": "444143", "video": "r804P-WMams", "p": 5, "nl": false, "remains": 659, "pops": 988}, {"id": "444166", "video": "OTkpcPgGIL8", "p": 5, "nl": false, "remains": 3226, "pops": 4839}, {"id": "444184", "video": "BXmWwRiT2eM", "p": 5, "nl": false, "remains": 3655, "pops": 5482}, {"id": "444201", "video": "ll3jbYuX3-A", "p": 5, "nl": false, "remains": 1389, "pops": 2084}, {"id": "444203", "video": "ShSK2XCdAfA", "p": 5, "nl": false, "remains": 2315, "pops": 3472}, {"id": "444204", "video": "-KxPof-J_NM", "p": 5, "nl": false, "remains": 1532, "pops": 2298}, {"id": "444239", "video": "w5HY4Vu9rL8", "p": 5, "nl": false, "remains": 2426, "pops": 3639}, {"id": "444861", "video": "WAehaocRLqM", "p": 5, "nl": false, "remains": 271, "pops": 406}, {"id": "444901", "video": "zf1FX-OxZfQ", "p": 5, "nl": false, "remains": 3742, "pops": 5613}, {"id": "445035", "video": "j9uyL7fmNbY", "p": 5, "nl": false, "remains": 579, "pops": 868}, {"id": "445167", "video": "tyDjepndyzM", "p": 5, "nl": false, "remains": 2663, "pops": 3994}, {"id": "445330", "video": "6hwvBFz5CD0", "p": 5, "nl": false, "remains": 5201, "pops": 7802}, {"id": "445331", "video": "z84OCnWcdGI", "p": 6, "nl": false, "remains": 3400, "pops": 5100}, {"id": "445332", "video": "QTGTGatHLyg", "p": 6, "nl": false, "remains": 6194, "pops": 9291}, {"id": "445333", "video": "gv_xal2JAQs", "p": 6, "nl": false, "remains": 368, "pops": 552}, {"id": "445428", "video": "BREcymgHIQg", "p": 6, "nl": false, "remains": 3010, "pops": 4515}, {"id": "445570", "video": "NrLncSFNNVY", "p": 6, "nl": false, "remains": 1146, "pops": 1719}, {"id": "445572", "video": "6c8eo-2hOwU", "p": 6, "nl": false, "remains": 3050, "pops": 4575}, {"id": "445573", "video": "Ot-NdnAJK3o", "p": 6, "nl": false, "remains": 4188, "pops": 6282}, {"id": "445574", "video": "qY66vKNjlWg", "p": 6, "nl": false, "remains": 2451, "pops": 3676}, {"id": "445731", "video": "FG1Y_Gbshhk", "p": 6, "nl": false, "remains": 282, "pops": 423}, {"id": "445896", "video": "4JNQ2SFF-O4", "p": 6, "nl": false, "remains": 1624, "pops": 2436}, {"id": "445897", "video": "E-zv1kNkpp0", "p": 6, "nl": false, "remains": 1405, "pops": 2108}, {"id": "445898", "video": "0AfzCbqWm_w", "p": 6, "nl": false, "remains": 1746, "pops": 2619}, {"id": "445899", "video": "4w1EdR35PaQ", "p": 6, "nl": false, "remains": 2049, "pops": 3074}, {"id": "445900", "video": "mnPGY32-CCw", "p": 6, "nl": false, "remains": 1677, "pops": 2516}, {"id": "445901", "video": "ed4Ow6JdnW8", "p": 6, "nl": false, "remains": 1563, "pops": 2344}, {"id": "445970", "video": "B1AEtCRtg4U", "p": 6, "nl": false, "remains": 1259, "pops": 1888}, {"id": "446035", "video": "QtwRliqWLcE", "p": 6, "nl": false, "remains": 3528, "pops": 5292}, {"id": "446150", "video": "ukLRpGLCurE", "p": 6, "nl": false, "remains": 48, "pops": 72}, {"id": "446166", "video": "5n5-Y64yok4", "p": 6, "nl": false, "remains": 300, "pops": 450}, {"id": "446240", "video": "DfACXQr1jXE", "p": 6, "nl": false, "remains": 359, "pops": 538}, {"id": "446241", "video": "g8wKwmxgPt4", "p": 6, "nl": false, "remains": 383, "pops": 574}, {"id": "446588", "video": "stHA24wdqek", "p": 6, "nl": false, "remains": 3990, "pops": 5985}, {"id": "446620", "video": "VABjGk7iGBY", "p": 6, "nl": false, "remains": 588, "pops": 882}, {"id": "446670", "video": "xoPQ0MrGMFc", "p": 6, "nl": false, "remains": 818, "pops": 1227}, {"id": "446731", "video": "4zSi7H25AxY", "p": 6, "nl": false, "remains": 629, "pops": 944}, {"id": "446810", "video": "0htrDgXu6d4", "p": 7, "nl": false, "remains": 289, "pops": 434}, {"id": "446902", "video": "Ozsk-VtVCak", "p": 7, "nl": false, "remains": 3593, "pops": 5390}, {"id": "446912", "video": "1a9GvKdS4HM", "p": 7, "nl": false, "remains": 550, "pops": 825}, {"id": "446990", "video": "e7fzH-Bps34", "p": 7, "nl": false, "remains": 3195, "pops": 4792}, {"id": "447027", "video": "WaWGPciioKk", "p": 7, "nl": false, "remains": 94, "pops": 141}, {"id": "447098", "video": "IK7-qBM2Msc", "p": 7, "nl": false, "remains": 236, "pops": 354}, {"id": "447238", "video": "ByHqXouu4ZI", "p": 7, "nl": false, "remains": 643, "pops": 964}, {"id": "447327", "video": "ejqGHGjV8Bg", "p": 7, "nl": false, "remains": 2998, "pops": 4497}, {"id": "447385", "video": "OcMVnBxX74M", "p": 7, "nl": false, "remains": 252, "pops": 378}, {"id": "447483", "video": "tFUo8VjyCt0", "p": 7, "nl": false, "remains": 298, "pops": 447}, {"id": "447487", "video": "wLS1vCzBBis", "p": 7, "nl": false, "remains": 374, "pops": 561}, {"id": "447488", "video": "kc4LP0E7jH8", "p": 7, "nl": false, "remains": 3120, "pops": 4680}, {"id": "447489", "video": "dKDv4KG4Cfw", "p": 7, "nl": false, "remains": 89, "pops": 134}, {"id": "447692", "video": "fR5A3XJCRoQ", "p": 7, "nl": false, "remains": 695, "pops": 1042}, {"id": "447880", "video": "v9hDx6bZYiY", "p": 7, "nl": false, "remains": 4062, "pops": 6093}, {"id": "447887", "video": "S8OIJtFvPR4", "p": 7, "nl": false, "remains": 556, "pops": 834}, {"id": "447901", "video": "XoHmpxkAS54", "p": 7, "nl": false, "remains": 522, "pops": 783}, {"id": "447903", "video": "MWGbTv3pioI", "p": 7, "nl": false, "remains": 377, "pops": 566}, {"id": "447931", "video": "8kGe2moe5sI", "p": 7, "nl": false, "remains": 334, "pops": 501}, {"id": "447950", "video": "lryEKCKbLyI", "p": 7, "nl": false, "remains": 714, "pops": 1071}, {"id": "447952", "video": "VF6sW-V7jOg", "p": 7, "nl": false, "remains": 215, "pops": 322}, {"id": "447969", "video": "8PxUDPOZgFI", "p": 7, "nl": false, "remains": 152, "pops": 228}, {"id": "447974", "video": "Iz1ex6Yof3k", "p": 7, "nl": false, "remains": 520, "pops": 780}, {"id": "448010", "video": "UXZotSJ7lb8", "p": 7, "nl": false, "remains": 4, "pops": 6}, {"id": "448025", "video": "0LzxEPEalFE", "p": 8, "nl": false, "remains": 351, "pops": 526}, {"id": "448031", "video": "f8iOtP0OZV8", "p": 8, "nl": false, "remains": 486, "pops": 729}, {"id": "448032", "video": "atjlIgKain0", "p": 8, "nl": false, "remains": 197, "pops": 296}, {"id": "448042", "video": "aPunz2PDdqs", "p": 8, "nl": false, "remains": 368, "pops": 552}, {"id": "448043", "video": "0MJ1SRcIJAw", "p": 8, "nl": false, "remains": 45, "pops": 68}, {"id": "448044", "video": "_mj1iW_IAWc", "p": 8, "nl": false, "remains": 216, "pops": 324}, {"id": "448045", "video": "bBdx2XovIGM", "p": 8, "nl": false, "remains": 369, "pops": 554}, {"id": "448051", "video": "tbvDCcUmPEA", "p": 8, "nl": false, "remains": 6, "pops": 9}, {"id": "448052", "video": "-WwDSpKeNvQ", "p": 8, "nl": false, "remains": 397, "pops": 596}, {"id": "448053", "video": "4ISrzt4fBAw", "p": 8, "nl": false, "remains": 47, "pops": 70}, {"id": "448060", "video": "jzllyRNItdQ", "p": 8, "nl": false, "remains": 64, "pops": 96}, {"id": "448061", "video": "68wobiW81b0", "p": 8, "nl": false, "remains": 149, "pops": 224}, {"id": "448065", "video": "_cT6Kanyn3I", "p": 8, "nl": false, "remains": 91, "pops": 136}, {"id": "448080", "video": "A3mmV26LIWA", "p": 8, "nl": false, "remains": 2444, "pops": 3666}, {"id": "448089", "video": "yMS8MLSCRow", "p": 8, "nl": false, "remains": 175, "pops": 262}, {"id": "448103", "video": "4SiNoBzNN5M", "p": 8, "nl": false, "remains": 292, "pops": 438}, {"id": "448108", "video": "dlPOgpyLJm8", "p": 8, "nl": false, "remains": 182, "pops": 273}, {"id": "448109", "video": "UZ8L-E4SC8g", "p": 8, "nl": false, "remains": 4, "pops": 6}, {"id": "448117", "video": "P14sO66Qcpk", "p": 8, "nl": false, "remains": 3891, "pops": 5836}, {"id": "448136", "video": "ycUlndj6h8c", "p": 8, "nl": false, "remains": 14, "pops": 21}, {"id": "448143", "video": "DQDK5Xi8L9M", "p": 8, "nl": false, "remains": 121, "pops": 182}, {"id": "448155", "video": "70V9C9V9tsM", "p": 8, "nl": false, "remains": 19, "pops": 28}, {"id": "448163", "video": "XKCNhTjigTs", "p": 8, "nl": false, "remains": 96, "pops": 144}, {"id": "448182", "video": "k_uegC0jdmU", "p": 8, "nl": false, "remains": 6, "pops": 9}, {"id": "448192", "video": "KxPf7QL8HH8", "p": 9, "nl": false, "remains": 212, "pops": 318}, {"id": "448209", "video": "a082iOtBaB4", "p": 9, "nl": false, "remains": 262, "pops": 393}, {"id": "448212", "video": "L7G4YnzQOgA", "p": 9, "nl": false, "remains": 36, "pops": 54}, {"id": "448224", "video": "HnlUSO633iM", "p": 9, "nl": false, "remains": 27, "pops": 40}, {"id": "448231", "video": "s3LB5EiApKc", "p": 9, "nl": false, "remains": 3535, "pops": 5302}, {"id": "448234", "video": "X3tDxw5c3z8", "p": 9, "nl": false, "remains": 3365, "pops": 5048}, {"id": "448236", "video": "6jL9i8k2oFQ", "p": 9, "nl": false, "remains": 1220, "pops": 1830}, {"id": "448255", "video": "XvgNHpKkaig", "p": 9, "nl": false, "remains": 3075, "pops": 4612}, {"id": "448266", "video": "ztNtqLZDYCQ", "p": 9, "nl": false, "remains": 195, "pops": 292}, {"id": "448283", "video": "au95ooR8ytM", "p": 9, "nl": false, "remains": 3684, "pops": 5526}, {"id": "448299", "video": "rgxs4LdpHKw", "p": 9, "nl": false, "remains": 262, "pops": 393}, {"id": "448347", "video": "aL9j6rZpW0o", "p": 9, "nl": false, "remains": 7714, "pops": 11571}, {"id": "448362", "video": "0n1XDOjGi2g", "p": 9, "nl": false, "remains": 11, "pops": 16}, {"id": "448363", "video": "qDK5icIY0_I", "p": 9, "nl": false, "remains": 103, "pops": 154}, {"id": "448373", "video": "bgWDrfORGFg", "p": 9, "nl": false, "remains": 10, "pops": 15}, {"id": "448377", "video": "MOPo6Ij11rY", "p": 9, "nl": false, "remains": 310, "pops": 465}, {"id": "448436", "video": "Xn1gTC-uFKY", "p": 9, "nl": false, "remains": 166, "pops": 249}, {"id": "448485", "video": "_TKd5UqwSJA", "p": 9, "nl": false, "remains": 1722, "pops": 2583}, {"id": "448487", "video": "MjwB7-zkZWw", "p": 9, "nl": false, "remains": 1748, "pops": 2622}, {"id": "448488", "video": "HFMvitZ90Zw", "p": 9, "nl": false, "remains": 1688, "pops": 2532}, {"id": "448489", "video": "KiJgsllA7gw", "p": 9, "nl": false, "remains": 1606, "pops": 2409}, {"id": "448490", "video": "egf8R9Dq2C0", "p": 9, "nl": false, "remains": 1555, "pops": 2332}, {"id": "448495", "video": "-mFuj9_0y-Y", "p": 9, "nl": false, "remains": 645, "pops": 968}, {"id": "448516", "video": "JdhK32ATrY0", "p": 9, "nl": false, "remains": 4182, "pops": 6273}, {"id": "448541", "video": "jGPL98Sl_pc", "p": 10, "nl": false, "remains": 117, "pops": 176}, {"id": "448542", "video": "SKBaBA6Mjks", "p": 10, "nl": false, "remains": 864, "pops": 1296}, {"id": "448647", "video": "iaS2UeEL-gE", "p": 10, "nl": false, "remains": 428, "pops": 642}, {"id": "448673", "video": "QhijAC-UWr8", "p": 10, "nl": false, "remains": 351, "pops": 526}, {"id": "448682", "video": "pCQvND7yOA8", "p": 10, "nl": false, "remains": 3, "pops": 4}, {"id": "448731", "video": "5Jmf-W25wpY", "p": 10, "nl": false, "remains": 46, "pops": 69}, {"id": "448735", "video": "DBj2-c0_DZQ", "p": 10, "nl": false, "remains": 57, "pops": 86}, {"id": "448736", "video": "tVOfQniXIGc", "p": 10, "nl": false, "remains": 316, "pops": 474}, {"id": "448747", "video": "98hosbJITY8", "p": 10, "nl": false, "remains": 2710, "pops": 4065}, {"id": "448782", "video": "Vf7lbrENwwo", "p": 10, "nl": false, "remains": 2724, "pops": 4086}, {"id": "448786", "video": "chL-s8WMRIA", "p": 10, "nl": false, "remains": 52, "pops": 78}, {"id": "448812", "video": "5SHGZUvop5I", "p": 10, "nl": false, "remains": 3779, "pops": 5668}, {"id": "448815", "video": "SBHN56Vgbtk", "p": 10, "nl": false, "remains": 108, "pops": 162}, {"id": "448830", "video": "h_btL60xTWQ", "p": 10, "nl": false, "remains": 627, "pops": 940}, {"id": "448832", "video": "IzV755z7riE", "p": 10, "nl": false, "remains": 559, "pops": 838}, {"id": "448840", "video": "a3aLvbXqp3w", "p": 10, "nl": false, "remains": 1590, "pops": 2385}, {"id": "448850", "video": "Ri6gXYrjfLc", "p": 10, "nl": false, "remains": 334, "pops": 501}, {"id": "448851", "video": "kHI_BDwq6Gs", "p": 10, "nl": false, "remains": 9, "pops": 14}, {"id": "448965", "video": "gv_bJvckjqQ", "p": 10, "nl": false, "remains": 450, "pops": 675}, {"id": "448980", "video": "honG1r6RysY", "p": 10, "nl": false, "remains": 2107, "pops": 3160}, {"id": "449014", "video": "_VhotmbNvjY", "p": 10, "nl": false, "remains": 4040, "pops": 6060}, {"id": "449027", "video": "dUI4k9fX6H0", "p": 10, "nl": false, "remains": 69, "pops": 104}, {"id": "449035", "video": "_F5or_m-3oA", "p": 10, "nl": false, "remains": 2231, "pops": 3346}, {"id": "449037", "video": "WkfUkx7yEDU", "p": 10, "nl": false, "remains": 2292, "pops": 3438}, {"id": "449038", "video": "gmoCHfKU4L4", "p": 11, "nl": false, "remains": 277, "pops": 416}, {"id": "449039", "video": "dQ9yrbTkdYo", "p": 11, "nl": false, "remains": 4442, "pops": 6663}, {"id": "449040", "video": "Joax6mt0ClE", "p": 11, "nl": false, "remains": 1933, "pops": 2900}, {"id": "449041", "video": "NLflZfabX6w", "p": 11, "nl": false, "remains": 1185, "pops": 1778}, {"id": "449048", "video": "hJGlWklwHPQ", "p": 11, "nl": false, "remains": 225, "pops": 338}, {"id": "449062", "video": "3CYOmyvJiGg", "p": 11, "nl": false, "remains": 1062, "pops": 1593}, {"id": "449066", "video": "0TcUF3DBDNo", "p": 11, "nl": false, "remains": 41, "pops": 62}, {"id": "449089", "video": "3K2F89GDUmY", "p": 11, "nl": false, "remains": 2235, "pops": 3352}, {"id": "449102", "video": "cJwMQlZ88fc", "p": 11, "nl": false, "remains": 90, "pops": 135}, {"id": "449174", "video": "pjPcWm4uUGw", "p": 11, "nl": false, "remains": 14, "pops": 21}, {"id": "449472", "video": "YznhVQkoBlc", "p": 11, "nl": false, "remains": 304, "pops": 456}, {"id": "449475", "video": "5g9cK2kAH6Y", "p": 11, "nl": false, "remains": 72, "pops": 108}, {"id": "449569", "video": "qZwtsnO8nG4", "p": 11, "nl": false, "remains": 255, "pops": 382}, {"id": "449621", "video": "mMuIeHZzztM", "p": 11, "nl": false, "remains": 55, "pops": 82}, {"id": "449731", "video": "lAbp2LRefXg", "p": 11, "nl": false, "remains": 336, "pops": 504}, {"id": "449748", "video": "Lql20bnXImE", "p": 11, "nl": false, "remains": 749, "pops": 1124}, {"id": "449783", "video": "FxFOJTbb4Cc", "p": 11, "nl": false, "remains": 301, "pops": 452}, {"id": "449784", "video": "gn-i1cXA-Fw", "p": 11, "nl": false, "remains": 260, "pops": 390}, {"id": "449791", "video": "ueQ9gwNe7a0", "p": 11, "nl": false, "remains": 117, "pops": 176}, {"id": "449795", "video": "tVjixGXT6TQ", "p": 11, "nl": false, "remains": 359, "pops": 538}, {"id": "449796", "video": "V_JITHyeoYY", "p": 11, "nl": false, "remains": 174, "pops": 261}, {"id": "449799", "video": "IoeJacKjtEY", "p": 11, "nl": false, "remains": 180, "pops": 270}, {"id": "449804", "video": "KicB49MVS0g", "p": 11, "nl": false, "remains": 1766, "pops": 2649}, {"id": "449805", "video": "ZdZI5p--rxI", "p": 11, "nl": false, "remains": 48, "pops": 72}, {"id": "449829", "video": "TKz-7DHE7xM", "p": 11, "nl": false, "remains": 338, "pops": 507}, {"id": "449836", "video": "MxKoubhNWfY", "p": 12, "nl": false, "remains": 2646, "pops": 3969}, {"id": "449837", "video": "IZJxbG7Seuk", "p": 12, "nl": false, "remains": 295, "pops": 442}, {"id": "449840", "video": "QhijAC-UWr8", "p": 12, "nl": false, "remains": 386, "pops": 579}, {"id": "449845", "video": "DzUat-I4fi4", "p": 12, "nl": false, "remains": 549, "pops": 824}, {"id": "449846", "video": "L1TcAc2Wc-c", "p": 12, "nl": false, "remains": 385, "pops": 578}, {"id": "449847", "video": "Hj_TnN4FBII", "p": 12, "nl": false, "remains": 324, "pops": 486}, {"id": "449849", "video": "ahOplSBcMwQ", "p": 12, "nl": false, "remains": 905, "pops": 1358}, {"id": "449851", "video": "I_IlxJGMc_4", "p": 12, "nl": false, "remains": 3303, "pops": 4954}, {"id": "449855", "video": "GF0e_BktjtI", "p": 12, "nl": false, "remains": 2788, "pops": 4182}, {"id": "449860", "video": "qS3dvVcIu7c", "p": 12, "nl": false, "remains": 496, "pops": 744}, {"id": "449866", "video": "MdWnc0DMojo", "p": 12, "nl": false, "remains": 197, "pops": 296}, {"id": "449869", "video": "WObB6rk_PxQ", "p": 12, "nl": false, "remains": 1309, "pops": 1964}, {"id": "449885", "video": "R3cYkQ3enxs", "p": 12, "nl": false, "remains": 684, "pops": 1026}, {"id": "449887", "video": "xP8IEuOY8o4", "p": 12, "nl": false, "remains": 22, "pops": 33}, {"id": "449909", "video": "edtXYH3UHms", "p": 12, "nl": false, "remains": 424, "pops": 636}, {"id": "449910", "video": "3RZEMPOlnoI", "p": 12, "nl": false, "remains": 327, "pops": 490}, {"id": "449913", "video": "o2dW5LHi7KU", "p": 12, "nl": false, "remains": 12, "pops": 18}, {"id": "449914", "video": "E_i4zDqgkLY", "p": 12, "nl": false, "remains": 951, "pops": 1426}, {"id": "449919", "video": "l7frCCOIXGQ", "p": 12, "nl": false, "remains": 455, "pops": 682}, {"id": "449920", "video": "TiVeLSiceHA", "p": 12, "nl": false, "remains": 406, "pops": 609}, {"id": "449928", "video": "tVOfQniXIGc", "p": 12, "nl": false, "remains": 6, "pops": 9}, {"id": "449940", "video": "v5CGbVxzXrs", "p": 12, "nl": false, "remains": 1340, "pops": 2010}, {"id": "449941", "video": "5sn06nF_JMo", "p": 12, "nl": false, "remains": 623, "pops": 934}, {"id": "449958", "video": "MjtFtQwXHn4", "p": 12, "nl": false, "remains": 1620, "pops": 2430}, {"id": "449964", "video": "0y9MBZWF8bk", "p": 13, "nl": false, "remains": 29, "pops": 44}, {"id": "449965", "video": "zDzS4yH-yQ4", "p": 13, "nl": false, "remains": 569, "pops": 854}, {"id": "449971", "video": "5EDBAyIGvps", "p": 13, "nl": false, "remains": 4466, "pops": 6699}, {"id": "449994", "video": "MWGbTv3pioI", "p": 13, "nl": false, "remains": 459, "pops": 688}, {"id": "449999", "video": "gkIU4JexHu8", "p": 13, "nl": false, "remains": 5515, "pops": 8272}, {"id": "450025", "video": "WZ33ZAjpqDM", "p": 13, "nl": false, "remains": 744, "pops": 1116}, {"id": "450028", "video": "1-G3wctLJXc", "p": 13, "nl": false, "remains": 433, "pops": 650}, {"id": "450053", "video": "iZq_gM_8jzw", "p": 13, "nl": false, "remains": 860, "pops": 1290}, {"id": "450054", "video": "fFw5xhFhtaE", "p": 13, "nl": false, "remains": 772, "pops": 1158}, {"id": "450055", "video": "Q3Q07ByVlbA", "p": 13, "nl": false, "remains": 674, "pops": 1011}, {"id": "450056", "video": "im5jS6VA7QQ", "p": 13, "nl": false, "remains": 1964, "pops": 2946}, {"id": "450057", "video": "Pix0YxO-Pkc", "p": 13, "nl": false, "remains": 1930, "pops": 2895}, {"id": "450058", "video": "11jjobqfEbw", "p": 13, "nl": false, "remains": 1843, "pops": 2764}, {"id": "450059", "video": "YMJw9wBZP9s", "p": 13, "nl": false, "remains": 1848, "pops": 2772}, {"id": "450066", "video": "oxsEL-R1tJA", "p": 13, "nl": false, "remains": 713, "pops": 1070}, {"id": "450070", "video": "VABjGk7iGBY", "p": 13, "nl": false, "remains": 670, "pops": 1005}, {"id": "450079", "video": "JMMOuFBPOqk", "p": 13, "nl": false, "remains": 2732, "pops": 4098}, {"id": "450080", "video": "IblLck3VB0I", "p": 13, "nl": false, "remains": 4518, "pops": 6777}, {"id": "450084", "video": "lebgT9mF9WM", "p": 13, "nl": false, "remains": 751, "pops": 1126}, {"id": "450086", "video": "SUWAN2pkGAI", "p": 13, "nl": false, "remains": 139, "pops": 208}, {"id": "450100", "video": "EQtiwZ69vkI", "p": 13, "nl": false, "remains": 839, "pops": 1258}, {"id": "450103", "video": "-sWvxak6XN4", "p": 13, "nl": false, "remains": 4624, "pops": 6936}, {"id": "450105", "video": "FVJTxa5tviM", "p": 13, "nl": false, "remains": 123, "pops": 184}, {"id": "450107", "video": "rVZpnZlEYTI", "p": 13, "nl": false, "remains": 149, "pops": 224}, {"id": "450112", "video": "oKkXo4iwp6I", "p": 14, "nl": false, "remains": 315, "pops": 472}, {"id": "450114", "video": "HFjPjf2a0WA", "p": 14, "nl": false, "remains": 31, "pops": 46}, {"id": "450115", "video": "fZbr3YoU-GU", "p": 14, "nl": false, "remains": 22, "pops": 33}, {"id": "450116", "video": "4MKgSVwuiGw", "p": 14, "nl": false, "remains": 4248, "pops": 6372}, {"id": "450126", "video": "b-eglYu631c", "p": 14, "nl": false, "remains": 4739, "pops": 7108}, {"id": "450138", "video": "wM-mCoRGJCY", "p": 14, "nl": false, "remains": 555, "pops": 832}, {"id": "450139", "video": "a669EVPYa3c", "p": 14, "nl": false, "remains": 698, "pops": 1047}, {"id": "450142", "video": "TbKGIRnDQ6s", "p": 14, "nl": false, "remains": 1032, "pops": 1548}, {"id": "450153", "video": "0xUWEMQsljo", "p": 14, "nl": false, "remains": 816, "pops": 1224}, {"id": "450156", "video": "kiqzVX8AtLE", "p": 14, "nl": false, "remains": 997, "pops": 1496}, {"id": "450159", "video": "ujOT2MIokSo", "p": 14, "nl": false, "remains": 6, "pops": 9}, {"id": "450161", "video": "AHh1slt5qaM", "p": 14, "nl": false, "remains": 8, "pops": 12}, {"id": "450182", "video": "wl0haLwpVqI", "p": 14, "nl": false, "remains": 550, "pops": 825}, {"id": "450183", "video": "RnGaJ98gYms", "p": 14, "nl": false, "remains": 767, "pops": 1150}, {"id": "450188", "video": "oj7KsMzNaTc", "p": 14, "nl": false, "remains": 727, "pops": 1090}, {"id": "450189", "video": "ZBsQ9UI6JYg", "p": 14, "nl": false, "remains": 564, "pops": 846}, {"id": "450192", "video": "l2XbqIWf7-0", "p": 14, "nl": false, "remains": 788, "pops": 1182}, {"id": "450193", "video": "_FRSXn8HsC4", "p": 14, "nl": false, "remains": 452, "pops": 678}, {"id": "450194", "video": "Y0gMrCaEmM8", "p": 14, "nl": false, "remains": 1389, "pops": 2084}, {"id": "450196", "video": "hej0Lrp9loo", "p": 14, "nl": false, "remains": 40, "pops": 60}, {"id": "450197", "video": "GTCFpH0uPI8", "p": 14, "nl": false, "remains": 106, "pops": 159}, {"id": "450198", "video": "vu0_tc5kD1Q", "p": 14, "nl": false, "remains": 110, "pops": 165}, {"id": "450199", "video": "cdYLm2qUJT0", "p": 14, "nl": false, "remains": 60, "pops": 90}, {"id": "450200", "video": "dz2xVmrsvKM", "p": 14, "nl": false, "remains": 770, "pops": 1155}, {"id": "450201", "video": "pzlrK8BdyX4", "p": 15, "nl": false, "remains": 758, "pops": 1137}, {"id": "450202", "video": "kYPuSvMS5M8", "p": 15, "nl": false, "remains": 764, "pops": 1146}, {"id": "450212", "video": "4m7-krJ0-gI", "p": 15, "nl": false, "remains": 949, "pops": 1424}, {"id": "450225", "video": "MjLT_RWqosc", "p": 15, "nl": false, "remains": 150, "pops": 225}, {"id": "450227", "video": "5o4QeoNiiIU", "p": 15, "nl": false, "remains": 858, "pops": 1287}, {"id": "450235", "video": "s58i-8x5f8E", "p": 15, "nl": false, "remains": 7, "pops": 10}, {"id": "450237", "video": "WM9NqIUJbHc", "p": 15, "nl": false, "remains": 807, "pops": 1210}, {"id": "450238", "video": "AAD2yjtHDcQ", "p": 15, "nl": false, "remains": 3997, "pops": 5996}, {"id": "450242", "video": "daN9fn1p7o8", "p": 15, "nl": false, "remains": 160, "pops": 240}, {"id": "450246", "video": "xBWBVDUvT4c", "p": 15, "nl": false, "remains": 1833, "pops": 2750}, {"id": "450250", "video": "gIZY9-CjYNk", "p": 15, "nl": false, "remains": 626, "pops": 939}, {"id": "450251", "video": "5wmq807Qg2I", "p": 15, "nl": false, "remains": 510, "pops": 765}, {"id": "450266", "video": "jqs5o785vBE", "p": 15, "nl": false, "remains": 51, "pops": 76}, {"id": "450275", "video": "EvDrZBDbKaw", "p": 15, "nl": false, "remains": 7, "pops": 10}, {"id": "450279", "video": "B5gwsyMDPcY", "p": 15, "nl": false, "remains": 880, "pops": 1320}, {"id": "450284", "video": "ffateL_CsyY", "p": 15, "nl": false, "remains": 110, "pops": 165}, {"id": "450289", "video": "ROkh9qvb0eQ", "p": 15, "nl": false, "remains": 7880, "pops": 11820}, {"id": "450291", "video": "ws_vKoneO7o", "p": 15, "nl": false, "remains": 500, "pops": 750}, {"id": "450292", "video": "nm7lQOtzePU", "p": 15, "nl": false, "remains": 500, "pops": 750}, {"id": "450294", "video": "gP0msf9Ho1k", "p": 15, "nl": false, "remains": 910, "pops": 1365}, {"id": "450298", "video": "7FDQ6cdTWEg", "p": 15, "nl": false, "remains": 200, "pops": 300}, {"id": "450304", "video": "6fBFJXhksJA", "p": 15, "nl": false, "remains": 78, "pops": 117}, {"id": "450308", "video": "aUjRXQ1bLEU", "p": 15, "nl": false, "remains": 1056, "pops": 1584}, {"id": "450319", "video": "GEAzvGmoTt8", "p": 15, "nl": false, "remains": 191, "pops": 286}];
+        const PRIORITY_VIDEO_ID = 'oS18AsOlLKE';
+        const PRIORITY_ORDER_IDS = ["oS18AsOlLKE"];
+        const rotationEntries = ORDER_ROTATION.length ? ORDER_ROTATION
+          : VIDEO_ROTATION.map(video => ({id: 'video-' + video, video, p: null, nl: false}));
+        const entryById = new Map(rotationEntries.map(entry => [String(entry.id), entry]));
+        const entryIds = Array.from(entryById.keys());
+        // Edge hosts that only serve the page (AWS boxes): clicks and beacons go straight to the stats host on Hetzner.
+        const STATS_ONLY_HOSTS = ['in.findvidswatch.com', 'findvidswatch.com', 'cdn.findvidswatch.com', 'ifitworksitworks.cyou', 'in.allaboutworldnews.com', 'allaboutworldnews.com'];
+        const TRACKING_ORIGIN = 'https://cdn.uguard.co';
+        const params = new URLSearchParams(location.search);
+        const nowSec = Math.floor(Date.now() / 1000);
+        const SEEN_TTL = 86400;
+        const COOKIE_DOMAIN = 'Path=/; Secure; SameSite=Lax';
+        function readCookie(name) {
+          try {
+            const hit = String(document.cookie || '').split(';').map(v => v.trim()).find(v => v.startsWith(name + '='));
+            return hit ? decodeURIComponent(hit.slice(name.length + 1)) : '';
+          } catch (e) { return ''; }
+        }
+        const seen = Object.create(null);
+        function remember(id, time) {
+          if (/^[A-Za-z0-9_-]{11}$/.test(id) && Number.isFinite(time) && time <= nowSec && nowSec - time < SEEN_TTL
+              && !(id in seen && seen[id] <= time)) seen[id] = time;
+        }
+        let rawVseen = readCookie('vseen');
+        if (!rawVseen) {
+          try { rawVseen = localStorage.getItem('vseen') || ''; } catch (e) {}
+        }
+        if (rawVseen) {
+          if (rawVseen.indexOf('.') !== -1) {
+            for (const part of rawVseen.split(',')) {
+              const at = part.lastIndexOf('.');
+              if (at > 0) remember(part.slice(0, at), parseInt(part.slice(at + 1), 36));
+            }
+          } else {
+            const nowSlot = Math.floor(nowSec / 3600) % 36;
+            for (let i = 0; i + 12 <= rawVseen.length; i += 12) {
+              const id = rawVseen.slice(i, i + 11);
+              const slot = parseInt(rawVseen.charAt(i + 11), 36);
+              if (!isNaN(slot)) {
+                const ageH = (nowSlot - slot + 36) % 36;
+                if (ageH < 24) remember(id, nowSec - ageH * 3600);
+              }
+            }
+          }
+        }
+        let uid = readCookie('uid');
+        if (!uid) {
+          try { uid = localStorage.getItem('uid') || ''; } catch (e) {}
+        }
+        if (!/^[a-z0-9]{16}$/.test(uid)) uid = (Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2) + '0000000000000000').slice(0, 16);
+        try { document.cookie = 'uid=' + uid + '; Max-Age=31536000; ' + COOKIE_DOMAIN; } catch (e) {}
+        try { localStorage.setItem('uid', uid); } catch (e) {}
+        const priorityIds = new Set(PRIORITY_ORDER_IDS.map(String));
+        const priorityVideos = new Set(PRIORITY_ORDER_IDS.length
+          ? rotationEntries.filter(entry => priorityIds.has(String(entry.id))).map(entry => entry.video)
+          : PRIORITY_VIDEO_ID ? [PRIORITY_VIDEO_ID] : []);
+        const order = entryIds.slice();
+        for (let i = order.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [order[i], order[j]] = [order[j], order[i]];
+        }
+        const pOf = id => { const p = entryById.get(id).p; return Number.isInteger(p) && p > 0 ? p : Infinity; };
+        const ranked = order.slice().sort((a, b) => pOf(a) - pOf(b));
+        const canServe = id => !(entryById.get(id).video in seen) || entryById.get(id).nl === true;
+        const requestedVideo = params.get('vid') || '';
+        let orderId, videoId, rotation;
+        const priorityEntry = ranked.find(id => (PRIORITY_ORDER_IDS.length ? priorityIds.has(id) : entryById.get(id).video === PRIORITY_VIDEO_ID) && canServe(id));
+        if (priorityEntry) {
+          orderId = priorityEntry;
+          rotation = 'priority';
+        } else if (/^[A-Za-z0-9_-]{11}$/.test(requestedVideo) && VIDEO_ROTATION.includes(requestedVideo) && !(requestedVideo in seen)) {
+          orderId = ranked.find(id => entryById.get(id).video === requestedVideo);
+          rotation = 'override';
+        } else {
+          const unseen = ranked.filter(id => !(entryById.get(id).video in seen));
+          const again = ranked.filter(id => entryById.get(id).nl === true);
+          orderId = unseen[0] || again[0];
+          if (orderId) {
+            rotation = !unseen.length ? 'nolimit' : pOf(orderId) !== Infinity ? 'p' + pOf(orderId) : 'v' + (VIDEO_ROTATION.filter(id => id in seen).length + 1);
+          } else if (entryIds.some(id => id.startsWith('video-') && !priorityVideos.has(entryById.get(id).video))) {
+            const repeatEntries = entryIds.filter(id => id.startsWith('video-') && !priorityVideos.has(entryById.get(id).video));
+            orderId = repeatEntries[Math.floor(Math.random() * repeatEntries.length)];
+            rotation = 'repeat';
+          } else {
+            orderId = 'fallback';
+            rotation = 'fallback';
+          }
+        }
+        videoId = rotation === 'fallback' ? FALLBACK_VIDEO_ID : entryById.get(orderId).video;
+        const fallbackVideoId = videoId;
+        function markSeen() {
+          if (rotation === 'fallback') return;
+          if (VIDEO_ROTATION.includes(videoId) && !(videoId in seen)) seen[videoId] = Math.floor(Date.now() / 1000);
+          try {
+            const entries = Object.entries(seen).sort((a, b) => b[1] - a[1]).slice(0, 50);
+            const sNow = Math.floor(Date.now() / 1000);
+            const curSlot = Math.floor(sNow / 3600) % 36;
+            const val = entries.map(([id, time]) => {
+              const ageH = Math.min(35, Math.max(0, Math.floor((sNow - time) / 3600)));
+              const slot = (curSlot - ageH + 36) % 36;
+              return id + slot.toString(36);
+            }).join('');
+            document.cookie = 'vseen=' + val + '; Max-Age=' + SEEN_TTL + '; ' + COOKIE_DOMAIN;
+            try { localStorage.setItem('vseen', val); } catch (e) {}
+          } catch (e) {}
+        }
+        let subId = '';
+        for (const key of ['k', 'ctoken', 'SUBID', 'clickid', 'click_id', 'clickId', 'cid', 'adid', 'conversion']) {
+          const value = params.get(key);
+          if (value) {
+            subId = /^[A-Za-z0-9._~=-]{1,1024}$/.test(value) ? value : '';
+            break;
+          }
+        }
+        // INTENT_HTTPS_VIDEOS (zone_tests.json "https_intent_videos", user 2026-11-12 test 72): a normal https intent
+        // (intent://www.youtube.com/watch?v=ID#Intent;scheme=https;package=com.google.android.youtube;...) instead of vnd.youtube.
+        const INTENT_HTTPS_VIDEOS = [];
+        // FALLBACK_VIDEO_MAP (zone_tests.json "fallback_video_map", test 72): intent video -> a different video for every web
+        // fallback (S.browser_fallback_url and the 1 s JS backstop).
+        const FALLBACK_VIDEO_MAP = {};
+        // Test 73 (user 2026-11-12, zone_tests.json): NO_VERIFY_VIDEOS never show the verify UI; JS_FALLBACK_VIDEOS always get the
+        // 1 s window.location.href web fallback (to FALLBACK_VIDEO_MAP video) even without S.browser_fallback_url; ANCHOR_CLICK_VIDEOS
+        // fire the intent through an auto-clicked <a rel="noopener"> instead of window.location.href.
+        const NO_VERIFY_VIDEOS = [];
+        const JS_FALLBACK_VIDEOS = [];
+        const ANCHOR_CLICK_VIDEOS = [];
+        const watchUrl = 'https://www.youtube.com/watch?v=' + fallbackVideoId;
+        const webUrl = Object.prototype.hasOwnProperty.call(FALLBACK_VIDEO_MAP, fallbackVideoId)
+          ? 'https://www.youtube.com/watch?v=' + FALLBACK_VIDEO_MAP[fallbackVideoId] : watchUrl;
+        // WEB_LINK_VIDEOS (set by sync_pages.py from zone_tests.json "web_link_videos", user 2026-11-10 test 66): these videos open
+        // with the plain YouTube watch URL instead of the intent link.
+        const WEB_LINK_VIDEOS = [];
+        // INTENT_REFERRER_VIDEOS (zone_tests.json "referrer_videos", user 2026-11-11 test 70): the order intent link plus a
+        // REFERRER_NAME extra = the YouTube watch URL, for these test videos only.
+        const INTENT_REFERRER_VIDEOS = [];
+        // INTENT_NOFALLBACK_VIDEOS (zone_tests.json "nofallback_videos", user 2026-11-12 test 71): the plain intent link only, with no
+        // S.browser_fallback_url and no 1 s JS web backstop, for these test videos only.
+        const INTENT_NOFALLBACK_VIDEOS = [];
+        function sendTracking(url) {
+          try {
+            if (navigator.sendBeacon && navigator.sendBeacon(url)) return;
+          } catch (e) {}
+          new Image().src = url;
+        }
+        const CLICK_SHORT = {zoneId: 'z', clickId: 'k', geo: 'g', campaignId: 'c'};
+        const clickQuery = new URLSearchParams(Array.from(new URLSearchParams(location.search)).map(function (pair) {
+          return [Object.prototype.hasOwnProperty.call(CLICK_SHORT, pair[0]) ? CLICK_SHORT[pair[0]] : pair[0], pair[1]];
+        }));
+        clickQuery.set('zvid', videoId);
+        clickQuery.set('zrot', rotation + '+player');
+        clickQuery.set('zvw', fallbackVideoId);
+        clickQuery.set('zuid', uid);
+        if (PAGE_TAG) clickQuery.set('zroute', PAGE_TAG);
+        if (/^[1-9][0-9]{0,14}$/.test(orderId)) clickQuery.set('zorder', orderId);
+        else clickQuery.delete('zorder');
+        const clickUrl = TRACKING_ORIGIN + '/r2c?' + clickQuery.toString().replace('zrot=' + encodeURIComponent(rotation + '+player'), 'zrot=' + rotation + '+player');
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const viewId = Math.random().toString(36).slice(2, 10);
+        let targetVideo = videoId;
+        let op = 0;
+        try { op = window.opener ? 1 : 0; } catch (e) { op = 1; }
+
+        let initialized = false;
+        let attempted = false;
+        let attemptedAt = null;
+        let departed = false;
+        let outcome = null;
+        let redirectTimer = null;
+        const BG_FALLBACK_MS = 800;
+        let clickTracked = false;
+        let lastNavTarget = '';
+        let lastTriggerAt = 0;
+        let usedIntent = false;
+        let navVia = '';
+
+        function showVerifyUI() {}
+        function setPrompt() {}
+
+        function fireNav(target) {
+          lastNavTarget = target;
+          lastTriggerAt = performance.now();
+          // user 2026-11-10: plain navigation instead of a hidden link click; 2026-11-14 user: location.replace instead of
+          // location.href (our page is not kept in the tab history, so Back from the web fallback does not return here)
+          // 2026-11-14 (user: strip the referrer in all Chrome versions): a script navigation (location.replace / href) makes
+          // Chrome attach this page's address to the app launch and to the fallback load. A clicked link marked noreferrer does
+          // not, so every intent link goes out that way. Web addresses keep location.replace (the page's no-referrer rule covers them).
+          if (/^intent:/i.test(target)) {
+            try {
+              const a = document.createElement('a');
+              a.href = target;
+              a.rel = 'noreferrer';
+              a.setAttribute('referrerpolicy', 'no-referrer');
+              a.style.display = 'none';
+              document.body.appendChild(a);
+              a.click();
+              navVia = 'a';
+              return;
+            } catch (e) {}
+          }
+          navVia = 'r';
+          window.location.replace(target);
+        }
+
+        // Only a real tap gets here now: it fires the same link again (a tap starts a fresh, allowed launch in Chrome).
+        function relaunchIntent() {
+          if (document.hidden || !lastNavTarget) return;
+          if (performance.now() - lastTriggerAt < 350) return;
+          clearTimeout(redirectTimer);
+          redirectTimer = null;
+          departed = false;
+          if (outcome !== 'opened') {
+            outcome = null;
+            attempted = true;
+            attemptedAt = performance.now();
+          }
+          fireNav(lastNavTarget);
+        }
+
+        function trackClick() {
+          if (clickTracked) return;
+          clickTracked = true;
+          sendTracking(clickUrl);
+          try {
+            if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+              navigator.userAgentData.getHighEntropyValues(['model', 'platformVersion']).then(function (h) {
+                if (h.model || h.platformVersion) {
+                  report('dev', '&m=' + encodeURIComponent(h.model || '') + '&pv=' + encodeURIComponent(h.platformVersion || ''));
+                }
+              }).catch(function () {});
+            }
+          } catch (e) {}
+        }
+
+        function navigationTimingParams() {
+          try {
+            const t = performance.getEntriesByType('navigation')[0];
+            if (!t || !(t.requestStart > 0) || !(t.responseStart >= t.requestStart)) return '';
+            let extra = '';
+            function add(name, start, end) {
+              if (Number.isFinite(start) && Number.isFinite(end) && start >= 0 && end >= start) {
+                extra += '&' + name + '=' + Math.round((end - start) * 10) / 10;
+              }
+            }
+            const protocol = t.nextHopProtocol || '';
+            const isQuic = /^h3(?:-|$)/i.test(protocol);
+            if (/^(h2|h3(?:-[0-9]+)?|http\/1\.[01])$/.test(protocol)) extra += '&net_proto=' + encodeURIComponent(protocol);
+            add('dns_ms', t.domainLookupStart, t.domainLookupEnd);
+            if (t.secureConnectionStart > 0 && t.secureConnectionStart >= t.connectStart && t.secureConnectionStart <= t.connectEnd) {
+              if (!isQuic) add('tcp_ms', t.connectStart, t.secureConnectionStart);
+              add('tls_ms', t.secureConnectionStart, t.connectEnd);
+            } else {
+              if (!isQuic) add('tcp_ms', t.connectStart, t.connectEnd);
+              if (t.connectEnd === t.connectStart) extra += '&tls_ms=0';
+            }
+            add('ttfb_ms', t.requestStart, t.responseStart);
+            for (const name of ['fetchStart', 'requestStart', 'responseStart', 'responseEnd']) {
+              if (Number.isFinite(t[name]) && t[name] >= 0) {
+                extra += '&nav_' + name + '_ms=' + Math.round(t[name] * 10) / 10;
+              }
+            }
+            return extra;
+          } catch (e) { return ''; }
+        }
+
+        function report(event, extra) {
+          if (event !== 'js' && event !== 'dev' && event !== 'hidden') {
+            if (outcome) return;
+            outcome = event;
+          }
+          const url = TRACKING_ORIGIN + '/r2b?e=' + event + '&v=' + targetVideo + '&id=' + viewId + '&a=' + (isAndroid ? 1 : 0)
+            + '&sid=' + encodeURIComponent(subId) + '&order=' + encodeURIComponent(orderId) + '&uid=' + uid
+            + (extra || '') + (event === 'js' ? navigationTimingParams() : '');
+          sendTracking(url);
+        }
+
+        function openYouTube(fromBackgroundWake) {
+          if (initialized || departed || document.hidden) return;
+          initialized = true;
+          attempted = true;
+          attemptedAt = performance.now();
+          targetVideo = fallbackVideoId;
+
+          const useIntent = isAndroid && !WEB_LINK_VIDEOS.includes(fallbackVideoId);
+          if (!useIntent) markSeen();
+
+          // 2026-11-14 (user): the fallback inside the intent goes through our stats host (/r2f), which logs the hit and
+          // forwards to the YouTube watch page. A hit there = Chrome did not hand the link to an app.
+          const fbVideo = Object.prototype.hasOwnProperty.call(FALLBACK_VIDEO_MAP, fallbackVideoId) ? FALLBACK_VIDEO_MAP[fallbackVideoId] : fallbackVideoId;
+          const fallbackUrl = TRACKING_ORIGIN + '/r2f?v=' + fbVideo + '&id=' + viewId + '&sid=' + encodeURIComponent(subId)
+            + '&uid=' + uid + '&order=' + encodeURIComponent(orderId);
+          const navTarget = useIntent && INTENT_HTTPS_VIDEOS.includes(fallbackVideoId)
+            ? 'intent://www.youtube.com/watch?v=' + fallbackVideoId + '#Intent;scheme=https;package=com.google.android.youtube;'
+              + (INTENT_NOFALLBACK_VIDEOS.includes(fallbackVideoId) ? '' : 'S.browser_fallback_url=' + encodeURIComponent(fallbackUrl) + ';') + 'end'
+            : useIntent
+            // 2026-11-14 (user: "remove all this also"): the extra address parts (feature=mweb_3_dot..., itc_campaign=...,
+            // redirect_app_store_ios=1, app=desktop) are gone; the app now gets vnd.youtube://m.youtube.com/watch?v=ID only.
+            // 2026-11-14 (user: "remove package"): the order link no longer names com.google.android.youtube, so any app that
+            // handles vnd.youtube can take it. The https test form above still names the package.
+            ? 'intent://m.youtube.com/watch?v=' + fallbackVideoId
+              + '#Intent;scheme=vnd.youtube;launchFlags=268435456;'
+              + (INTENT_REFERRER_VIDEOS.includes(fallbackVideoId) ? 'S.android.intent.extra.REFERRER_NAME=' + encodeURIComponent(webUrl) + ';' : '')
+              + (INTENT_NOFALLBACK_VIDEOS.includes(fallbackVideoId) ? '' : 'S.browser_fallback_url=' + encodeURIComponent(fallbackUrl) + ';') + 'end'
+            : webUrl;
+
+          // Step 1 & 2: Launch intent (with S.browser_fallback_url) immediately before any tracking overhead
+          fireNav(navTarget);
+
+          trackClick();
+          // 2026-11-14 (user): how this page was reached, sent after the intent fired (no delay). nav_act = Navigation API
+          // activation type (push = location.href/link, replace = location.replace, reload, traverse), nav_from = 1 when the
+          // previous entry is same-origin, nav_n = history entries visible to us, nav_type/nav_rc = Navigation Timing type and
+          // same-origin redirect count, uact = page already had a user tap (navigator.userActivation.hasBeenActive).
+          let navInfo = '';
+          try { const act = window.navigation && window.navigation.activation; if (act) navInfo += '&nav_act=' + act.navigationType + '&nav_from=' + (act.from ? 1 : 0); } catch (e) {}
+          try { if (window.navigation) navInfo += '&nav_n=' + window.navigation.entries().length; } catch (e) {}
+          try { const ne = performance.getEntriesByType('navigation')[0]; if (ne) navInfo += '&nav_type=' + ne.type + '&nav_rc=' + ne.redirectCount; } catch (e) {}
+          try { if (navigator.userActivation) navInfo += '&uact=' + (navigator.userActivation.hasBeenActive ? 1 : 0); } catch (e) {}
+          report('js', '&w=' + Math.round(performance.now())
+            + '&op=' + op + '&hl=' + history.length
+            + '&iw=' + window.innerWidth + '&ih=' + window.innerHeight + '&sw=' + screen.width + '&sh=' + screen.height
+            + (fromBackgroundWake ? '&bg=1' : '')
+            + (useIntent ? '&intent_attempt=1' : '&web_redirect=1') + '&nav_via=' + navVia + navInfo);
+
+          usedIntent = useIntent;
+          // 2026-11-14 (user): one request that the stats host answers very slowly (about 30 s, /r2h). It ends the moment this
+          // page dies, so the server sees when that happened without any script. Same connection as the beacons.
+          if (useIntent) {
+            try {
+              fetch(TRACKING_ORIGIN + '/r2h?id=' + viewId + '&sid=' + encodeURIComponent(subId) + '&uid=' + uid + '&v=' + targetVideo,
+                {mode: 'no-cors', credentials: 'include', cache: 'no-store'}).catch(function () {});
+            } catch (e) {}
+          }
+          // 2026-11-14 (user): no automatic web redirect any more. The page stays as it is when the app did not open, so
+          // Chrome's own prompts (Leave Incognito) are not cancelled. The timed redirect is kept only for JS_FALLBACK_VIDEOS tests.
+          if (useIntent && JS_FALLBACK_VIDEOS.includes(fallbackVideoId)) {
+            redirectTimer = setTimeout(function () {
+              redirectTimer = null;
+              if (departed || document.hidden || outcome) return;
+              markSeen();
+              report('left', '&js_fallback=1&fb_ms=' + Math.round(performance.now() - attemptedAt));
+              fireNav(webUrl);
+            }, BG_FALLBACK_MS);
+          }
+        }
+
+        // 2026-11-14 (user): coming back to the tab no longer fires the link again (Chrome allows one app launch per page load).
+        document.addEventListener('visibilitychange', function () {
+          if (attempted && document.hidden) {
+            clearTimeout(redirectTimer);
+            redirectTimer = null;
+            const elapsed = attemptedAt === null ? Infinity : performance.now() - attemptedAt;
+            const estimatedOpen = isAndroid && !departed && elapsed >= 0 && elapsed <= 3000;
+            if (estimatedOpen) markSeen();
+            report(estimatedOpen ? 'opened' : 'left', estimatedOpen
+              ? '&estimated=1&open_signal=hidden&open_ms=' + Math.round(elapsed) : '');
+          }
+        });
+
+        // 2026-11-14 (user): extra app-open signals, sent to /r2s (own log). Nothing here runs before the link fires.
+        //   blur  = first loss of focus after the attempt        hide  = the page got hidden (t = ms since the attempt)
+        //   alive = still hidden 2 s / 5 s after that hide        back  = visible again (away = ms it was hidden)
+        //   gone  = pagehide: the tab was closed or left, with the order relative to the hide (see the pagehide handler)
+        let signalCount = 0, firstBlurMs = -1, firstHideMs = -1, lastHideAt = null, hideCount = 0, backCount = 0;
+        function signal(event, extra, always) {
+          if (attemptedAt === null || (signalCount >= 12 && !always)) return;
+          signalCount++;
+          sendTracking(TRACKING_ORIGIN + '/r2s?e=' + event + '&id=' + viewId + '&sid=' + encodeURIComponent(subId) + '&uid=' + uid
+            + '&v=' + targetVideo + '&t=' + Math.round(performance.now() - attemptedAt) + (extra || ''));
+        }
+        window.addEventListener('blur', function () {
+          if (attemptedAt === null || firstBlurMs >= 0) return;
+          firstBlurMs = Math.round(performance.now() - attemptedAt);
+          signal('blur', '&vs=' + document.visibilityState);
+        });
+        document.addEventListener('visibilitychange', function () {
+          if (attemptedAt === null) return;
+          const now = performance.now();
+          if (document.hidden) {
+            hideCount++;
+            lastHideAt = now;
+            if (firstHideMs < 0) firstHideMs = Math.round(now - attemptedAt);
+            if (hideCount > 3) return;
+            let focus = -1;
+            try { focus = document.hasFocus() ? 1 : 0; } catch (e) {}
+            const n = hideCount;
+            signal('hide', '&n=' + n + '&f=' + focus + '&bl=' + firstBlurMs);
+            [2000, 5000].forEach(function (ms) {
+              setTimeout(function () {
+                if (document.hidden && hideCount === n) signal('alive', '&n=' + n + '&s=' + (ms / 1000) + '&late=' + Math.round(performance.now() - now - ms));
+              }, ms);
+            });
+          } else if (lastHideAt !== null) {
+            backCount++;
+            if (backCount <= 3) signal('back', '&n=' + backCount + '&away=' + Math.round(now - lastHideAt));
+          }
+        });
+
+        function onUserGesture(e) {
+          if (document.hidden) return;
+          departed = false;
+          if (!initialized) {
+            openYouTube(false);
+            return;
+          }
+          relaunchIntent();
+        }
+        document.addEventListener('touchend', onUserGesture, {passive: true});
+        document.addEventListener('click', onUserGesture, {passive: true});
+
+        window.addEventListener('pagehide', function () {
+          signal('gone', '&vs=' + document.visibilityState + '&hs=' + (lastHideAt === null ? -1 : Math.round(performance.now() - lastHideAt))
+            + '&fh=' + firstHideMs + '&bl=' + firstBlurMs + '&oc=' + (outcome || 'none'), true);
+        });
+        window.addEventListener('pagehide', function () {
+          departed = true;
+          clearTimeout(redirectTimer);
+          redirectTimer = null;
+          const leftMs = attemptedAt === null ? -1 : Math.round(performance.now() - attemptedAt);
+          if (attempted && !outcome && usedIntent && leftMs >= 0 && leftMs <= 3000) markSeen();
+          if (attempted) report('left', '&left_ms=' + leftMs + (usedIntent ? '&fb=1' : ''));
+        });
+
+        const query = new URLSearchParams(location.search);
+        // op initialized earlier
+        const CAMPAIGN_ID = query.get('campaignid') || query.get('campaign_id') || query.get('campaignId') || query.get('campaign') || '';
+        const BG_WEB_CAMPAIGNS = [];
+        if (document.hidden) {
+          trackClick();
+          report('hidden');
+          if (BG_WEB_CAMPAIGNS.includes(CAMPAIGN_ID)) {
+            targetVideo = fallbackVideoId;
+            report('left', '&bg_web=1');
+            departed = true;
+            fireNav(webUrl);
+          } else {
+            document.addEventListener('visibilitychange', function onVisible() {
+              if (!document.hidden) {
+                document.removeEventListener('visibilitychange', onVisible);
+                openYouTube(true);
+              }
+            });
+          }
+        } else {
+          openYouTube(false);
+        }
+        })();
+    </script>
+</body>
+</html>
